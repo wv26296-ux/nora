@@ -110,6 +110,7 @@ Docs: https://docs.openclaw.ai
 - Assistant text: strip Qwen-style XML tool call payloads from visible replies so web and channel messages no longer show raw `<tool_call><function=...>` output. (#64214) Thanks @MoerAI.
 - Daemon/gateway: prevent systemd restart storms on configuration errors by exiting with `EX_CONFIG` and adding generated unit restart-prevention guards. (#63913) Thanks @neo1027144-creator.
 - Agents/exec: prevent gateway crash ("Agent listener invoked outside active run") when a subagent exec tool produces stdout/stderr after the agent run has ended or been aborted. (#62821) Thanks @openperf.
+- Matrix/migration: keep packaged warning-only crypto migrations from being misclassified as actionable when only helper chunks are present, so startup and doctor stay on the warning-only path instead of creating unnecessary migration snapshots. (#64373) Thanks @gumadeiras.
 
 ## 2026.4.9
 
